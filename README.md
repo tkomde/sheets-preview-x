@@ -1,6 +1,6 @@
 ## Sheets Preview X Chrome App
 
-Enhancement of Sheets Preview.
+Enhancement of [Sheets Preview](https://github.com/klokantech/sheets-preview).
 
 Offline spreadsheet preview. Open XLSX, XLS (Microsoft Excel 95/97), CSV files directly with this JavaScript app.
 
