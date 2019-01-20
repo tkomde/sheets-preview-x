@@ -45,6 +45,11 @@ const openSpreadsheetData = bin_data => {
     //because chrome app don't allow inline js execution,,,
     document.getElementById(`radio-${i}`).addEventListener("click", () => {selectSheet(i)});
   }
+  //
+	//document.getElementById("main").addEventListener('dragenter', handleDragover, false);
+	//document.getElementById("main").addEventListener('dragover', handleDragover, false);
+  //document.getElementById("main").addEventListener('drop', handleDrop, false);
+
 }
 
 const selectSheet = arg => {
@@ -72,6 +77,7 @@ const openSpreadsheetFile = file => {
 }
 
 const openFile = () => {
+  
   chrome.fileSystem.chooseEntry({
     type: 'openFile',
     accepts:[{
@@ -89,6 +95,7 @@ const openFile = () => {
 
 /* set up drag-and-drop event */
 const handleDrop = e => {
+  //console.log("dropped");
   e.stopPropagation();
   e.preventDefault();
   // var files = e.dataTransfer.files;
@@ -105,14 +112,14 @@ const handleDragover = e => {
 	e.dataTransfer.dropEffect = 'copy';
 }
 
-if(drop.addEventListener) {
-	drop.addEventListener('dragenter', handleDragover, false);
-	drop.addEventListener('dragover', handleDragover, false);
-	drop.addEventListener('drop', handleDrop, false);
+if(main.addEventListener) {
+	main.addEventListener('dragenter', handleDragover, false);
+	main.addEventListener('dragover', handleDragover, false);
+	main.addEventListener('drop', handleDrop, false);
 }
 openfile.addEventListener('click', openFile, false);
 
-console.log(launchData);
+//console.log(launchData);
 
 if (launchData && launchData.items) {
   let entry = launchData.items[0].entry;
