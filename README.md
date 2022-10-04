@@ -8,7 +8,7 @@ Powered by open-source components Handsontable (http://handsontable.com/) & Shee
 
 ### Supported formats
 
-Microsoft Excel 5.0/95 BIFF5/CDF V2 Document, Excel 97-2004 BIFF8, Excel 2003-2004 XML Format (XML SpreadsheetML), Excel 2007+ Binary Format (XLSB), Excel 2007+ XML Formats (XLSX/XLSM), CSVs and OpenDocument Spreadsheet (ODS).
+Microsoft Excel 5.0/95 BIFF5/CDF V2 Document, Excel 97-2004 BIFF8, Excel 2003-2004 XML Format (XML SpreadsheetML), Excel 2007+ Binary Format (XLSB), Excel 2007+ XML Formats (XLSX/XLSM), CSVs, TSVs, and OpenDocument Spreadsheet (ODS).
 
 ### Not supported
 

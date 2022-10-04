@@ -1,9 +1,9 @@
 {
   "name": "Sheets Preview X",
   "description": "Enhancement of Sheets Preview. Open XLSX, XLS (Microsoft Excel 95/97), CSV files directly with this JavaScript app.",
-  "version": "0.6",
-  "manifest_version": 2,
-  "minimum_chrome_version": "60",
+  "version": "0.7",
+  "manifest_version": 3,
+  "minimum_chrome_version": "90",
   "icons": {
     "16": "icons/sheets-preview-16.png",
     "48": "icons/sheets-preview-48.png",
@@ -19,7 +19,7 @@
   "file_handlers": {
     "handler_name": {
       "extensions": [
-        "xls","xlsx","xlsm","ods","csv"
+        "xls","xlsx","xlsm","ods","csv","tsv"
       ]
     }
   },

@@ -5,7 +5,7 @@ let openfile = document.getElementById('openfile');
 const to_data = (wb, sheet) => {
   let result = [];
   let ws = wb.Sheets[wb.SheetNames[sheet]];
-  let json = XLS.utils.sheet_to_json(ws,{header:1, raw:false});
+  let json = XLSX.utils.sheet_to_json(ws,{header:1, raw:false});
   //if empty, set dummy array
   if (json.length == 0){
     json.push([]);
@@ -23,7 +23,7 @@ const to_data = (wb, sheet) => {
 let workbook;
 const openSpreadsheetData = bin_data => {
   /* if binary string, read with type 'binary' */
-  workbook = XLS.read(bin_data, {type: 'binary', cellDates:true, dateNF:"YYYY-MM-DD"});
+  workbook = XLSX.read(bin_data, {type: 'binary', cellDates:true, dateNF:"YYYY-MM-DD"});
   
   //show sheet names
   let tagstr = '<div class="toggle-buttons">';
@@ -55,6 +55,7 @@ const openSpreadsheetData = bin_data => {
 const selectSheet = arg => {
   let data = to_data(workbook,arg)
   let hot = new Handsontable(main, {
+    licenseKey: 'non-commercial-and-evaluation',
     data: data,
     minSpareRows: 1,
     rowHeaders: true,
@@ -81,7 +82,7 @@ const openFile = () => {
   chrome.fileSystem.chooseEntry({
     type: 'openFile',
     accepts:[{
-      extensions: ['xls','xlsx','xlsm','ods','csv']
+      extensions: ['xls','xlsx','xlsm','ods','csv','tsv']
     }]
   }, entry => {
     if (chrome.runtime.lastError) {
