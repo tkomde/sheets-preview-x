@@ -61,7 +61,9 @@ const selectSheet = arg => {
     rowHeaders: true,
     colHeaders: true,
     //stretchH: 'all',
-    contextMenu: true
+    contextMenu: true,
+    filters: true,
+    columnSorting: true,
   });
 }
 
