@@ -23,7 +23,7 @@ const to_data = (wb, sheet) => {
 let workbook;
 const openSpreadsheetData = bin_data => {
   /* if binary string, read with type 'binary' */
-  workbook = XLSX.read(bin_data, {type: 'binary', cellDates:true, dateNF:"YYYY-MM-DD"});
+  workbook = XLSX.read(bin_data, {type: 'binary', cellDates: true, dateNF:"YYYY-MM-DD hh:mm:ss"});//cellDates:true, dateNF:"YYYY-MM-DD"
   
   //show sheet names
   let tagstr = '<div class="toggle-buttons">';
@@ -45,11 +45,6 @@ const openSpreadsheetData = bin_data => {
     //because chrome app don't allow inline js execution,,,
     document.getElementById(`radio-${i}`).addEventListener("click", () => {selectSheet(i)});
   }
-  //
-	//document.getElementById("main").addEventListener('dragenter', handleDragover, false);
-	//document.getElementById("main").addEventListener('dragover', handleDragover, false);
-  //document.getElementById("main").addEventListener('drop', handleDrop, false);
-
 }
 
 const selectSheet = arg => {
@@ -62,6 +57,7 @@ const selectSheet = arg => {
     colHeaders: true,
     //stretchH: 'all',
     contextMenu: true,
+    dropdownMenu: true,
     filters: true,
     columnSorting: true,
   });
